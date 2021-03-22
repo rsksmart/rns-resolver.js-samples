@@ -7,3 +7,6 @@
 </p>
 
 React.js sample: [`rns-resolver-react`](rns-resolver-react)
+Node.js sample: [`rns-resolver-node`](rns-resolver-node)
+
+> All samples use RSK Testnet
