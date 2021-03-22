@@ -6,7 +6,8 @@
     RNS Resolver sample apps
 </p>
 
-React.js sample: [`rns-resolver-react`](rns-resolver-react)
-Node.js sample: [`rns-resolver-node`](rns-resolver-node)
+- React.js sample: [`rns-resolver-react`](rns-resolver-react)
+- Node.js sample: [`rns-resolver-node`](rns-resolver-node)
+- DOM sample: [`rns-resolver-dom`](rns-resolver-dom)
 
 > All samples use RSK Testnet

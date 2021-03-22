@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>RNS Resolver DOM</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+  <input id="domain-input" value="testing2.rsk" />
+  <button id="resolve-button">Resolve</button>
+  <p>RSK: <span id="rsk-addr"></span></p>
+  <p>BTC: <span id="btc-addr"></span></p>
+  <p>ETH: <span id="eth-addr"></span></p>
+  <p>NEM: <span id="nem-addr"></span></p>
+
+  <script src="https://cdn.jsdelivr.net/gh/rsksmart/rns-resolver.js@main/dist/bundle.js" integrity="sha384-N9PfnUuJ3UB+pGc+U032xO0aBbv0MvU9McTPN40BPuioUmioKmU1haASLkrexrSk" crossorigin="anonymous"></script>
+  <script>
+    const resolver = window.RNSResolver.default.forRskTestnet()
+
+    const setElementInnerText = (elementId, content) => { document.getElementById(elementId).innerText = content }
+
+    document.getElementById('resolve-button').addEventListener('click', () => {
+      const domain = document.getElementById('domain-input').value
+
+      return Promise.all([
+        resolver.addr(domain, 137).catch(e => e.message).then(r => setElementInnerText('rsk-addr', r)),
+        resolver.addr(domain, 0).catch(e => e.message).then(r => setElementInnerText('btc-addr', r)),,
+        resolver.addr(domain, 60).catch(e => e.message).then(r => setElementInnerText('eth-addr', r)),,
+        resolver.addr(domain, 43).catch(e => e.message).then(r => setElementInnerText('nem-addr', r)),
+      ])
+    })
+  </script>
+</body>
+</html>
