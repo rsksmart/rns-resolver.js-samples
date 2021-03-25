@@ -9,5 +9,6 @@
 - React.js sample: [`rns-resolver-react`](rns-resolver-react)
 - Node.js sample: [`rns-resolver-node`](rns-resolver-node)
 - DOM sample: [`rns-resolver-dom`](rns-resolver-dom)
+- React Native sample: [`RnsResolverRN`](RnsResolverRN)
 
 > All samples use RSK Testnet
